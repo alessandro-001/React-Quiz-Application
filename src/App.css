@@ -17,8 +17,16 @@ a {
   border: 10px solid;
 }
 
-body {
+
+
+/* pre installed css */
+/* to add in body below for background later 
+  IMPORTANT: choose a light colour bg
+
   background-image: url('../src/assets/brickwallBG.png');
+*/
+
+body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin: 0; 
