@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Home.css";
-import { TextField } from '@mui/material';
-
+import { Button, MenuItem, TextField } from '@mui/material';
+import Categories from '../../Data/Categories';
 
 export default function Home() {
+
+  const [category, setCategory] = useState('');
+  const [difficulty, setDifficulty] = useState('')
+
   return (
     <div className='content'>
       <div className='banner'>
@@ -30,8 +34,30 @@ export default function Home() {
           variant='outlined'
           style={{marginBottom: 25}}
           required 
-
-        />       
+        >
+          {Categories.map((cat) => {
+            return (
+            <MenuItem key={cat.category} val={cat.value} >
+              {cat.category}
+            </MenuItem>)
+          })}
+        </TextField>
+        <TextField
+           select
+           label='Choose Difficulty'
+           style={{marginBottom: 25}}
+           required
+        >
+          <MenuItem key="Easy" value="easy">Easy</MenuItem>
+          <MenuItem key="Medium" value="medium">Medium</MenuItem>
+          <MenuItem key="Hard" value="hard">Hard</MenuItem>
+        </TextField>
+        <Button 
+          variant='contained'
+          size='large'
+        >
+          Start Quiz
+        </Button>    
       </div>
     </div>
   )
