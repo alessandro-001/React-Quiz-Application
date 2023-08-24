@@ -3,10 +3,8 @@ import "./Home.css";
 import { Button, MenuItem, TextField } from '@mui/material';
 import Categories from '../../Data/categories';
 import { useNavigate } from 'react-router-dom';
-import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
 export default function Home({ name, setName, fetchQuestions }) {
-
   const [category, setCategory] = useState('');
   const [difficulty, setDifficulty] = useState('');
   const [error, setError] = useState(false);
@@ -33,7 +31,6 @@ export default function Home({ name, setName, fetchQuestions }) {
         <span style={{ fontSize: 40 }}>Quiz Settings</span>
       </div>
       <div className='settings_selection'>
-        {error && <ErrorMessage>Please fill all the required fields</ErrorMessage>}
         <TextField
           id="outlined-basic"
           label="Username"
@@ -41,6 +38,8 @@ export default function Home({ name, setName, fetchQuestions }) {
           style={{ marginBottom: 25 }}
           required
           onChange={(e) => setName(e.target.value)}
+          error={error && !name}
+          helperText={error && !name ? 'Username is required.' : ''}
         />
         <TextField
           select
@@ -50,6 +49,8 @@ export default function Home({ name, setName, fetchQuestions }) {
           required
           onChange={(e) => setCategory(e.target.value)}
           value={category}
+          error={error && !category}
+          helperText={error && !category ? 'Category is required.' : ''}
         >
           {Categories.map((cat) => (
             <MenuItem key={cat.category} value={cat.value}>
@@ -60,10 +61,16 @@ export default function Home({ name, setName, fetchQuestions }) {
         <TextField
           select
           label='Choose Difficulty'
+          variant='outlined'
           style={{ marginBottom: 25 }}
           required
-          onChange={(e) => setDifficulty(e.target.value)}
+          onChange={(e) => {
+            setDifficulty(e.target.value);
+            setError(false); // Clear the error when a difficulty is chosen
+          }}
           value={difficulty}
+          error={error}
+          helperText={error ? 'Difficulty is required.' : ''}
         >
           <MenuItem key="Easy" value="easy">Easy</MenuItem>
           <MenuItem key="Medium" value="medium">Medium</MenuItem>
@@ -77,6 +84,7 @@ export default function Home({ name, setName, fetchQuestions }) {
           Start Quiz
         </Button>
       </div>
+      {error && <div style={{ color: 'red', marginTop: '10px' }}>Please fill all the required fields</div>}
     </div>
   );
 }
@@ -150,9 +158,11 @@ export default function Home({ name, setName, fetchQuestions }) {
           required
           onChange={(e) => setDifficulty(e.target.value)}
           value={difficulty}
-          error={error && !difficulty}
-          helperText={error && !difficulty ? 'Difficulty is required.' : ''}
-        />
+        >
+          <MenuItem key="Easy" value="easy">Easy</MenuItem>
+          <MenuItem key="Medium" value="medium">Medium</MenuItem>
+          <MenuItem key="Hard" value="hard">Hard</MenuItem>
+        </TextField>
         <Button
           variant='contained'
           size='large'
