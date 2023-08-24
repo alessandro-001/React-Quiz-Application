@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import "./Home.css";
 import { Button, MenuItem, TextField } from '@mui/material';
 import Categories from '../../Data/categories';
+import { useNavigate } from 'react-router-dom';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 
-
-export default function Home({name, setName, fetchQuestions}) {
+export default function Home({ name, setName, fetchQuestions }) {
 
   const [category, setCategory] = useState('');
   const [difficulty, setDifficulty] = useState('');
   const [error, setError] = useState(false);
 
-  const history = useHistory 
+  const navigate = useNavigate();
 
   function handleSubmit() {
     if (!category || !difficulty || !name) {
@@ -19,7 +20,7 @@ export default function Home({name, setName, fetchQuestions}) {
     } else {
       setError(false);
       fetchQuestions(category, difficulty);
-      history.push('/quiz');
+      navigate('/quiz', { method: 'push' });
     }
   }
 
@@ -27,59 +28,142 @@ export default function Home({name, setName, fetchQuestions}) {
     <div className='content'>
       <div className='banner'>
         <p>Banner for quiz goes here</p>
-        {/* <img 
-        className='banner' 
-        alt='quiz banner'
-      ></img> */}
       </div>
       <div className='settings'>
-        <span style={{fontSize: 40}}>Quiz Settings</span>
+        <span style={{ fontSize: 40 }}>Quiz Settings</span>
       </div>
       <div className='settings_selection'>
-        <TextField 
-          id="outlined-basic" 
-          label="Username" 
-          variant="outlined" 
-          style={{marginBottom: 25}}
+        {error && <ErrorMessage>Please fill all the required fields</ErrorMessage>}
+        <TextField
+          id="outlined-basic"
+          label="Username"
+          variant="outlined"
+          style={{ marginBottom: 25 }}
           required
-          onChange={(e) => setName(e.target.value)} 
-        /> 
-        <TextField 
+          onChange={(e) => setName(e.target.value)}
+        />
+        <TextField
           select
           label='Choose Category'
           variant='outlined'
-          style={{marginBottom: 25}}
-          required 
-          onChange={(e) => setCategory(e.target.value)} 
+          style={{ marginBottom: 25 }}
+          required
+          onChange={(e) => setCategory(e.target.value)}
           value={category}
         >
-          {Categories.map((cat) => {
-            return (
-            <MenuItem key={cat.category} val={cat.value} >
+          {Categories.map((cat) => (
+            <MenuItem key={cat.category} value={cat.value}>
               {cat.category}
-            </MenuItem>)
-          })}
+            </MenuItem>
+          ))}
         </TextField>
         <TextField
-           select
-           label='Choose Difficulty'
-           style={{marginBottom: 25}}
-           required
-           onChange={(e) => setDifficulty(e.target.value)}
-           value={difficulty} 
+          select
+          label='Choose Difficulty'
+          style={{ marginBottom: 25 }}
+          required
+          onChange={(e) => setDifficulty(e.target.value)}
+          value={difficulty}
         >
           <MenuItem key="Easy" value="easy">Easy</MenuItem>
           <MenuItem key="Medium" value="medium">Medium</MenuItem>
           <MenuItem key="Hard" value="hard">Hard</MenuItem>
         </TextField>
-        <Button 
+        <Button
           variant='contained'
           size='large'
           onClick={handleSubmit}
         >
           Start Quiz
-        </Button>    
+        </Button>
       </div>
     </div>
-  )
+  );
 }
+
+/**
+ 
+import React, { useState } from 'react';
+import "./Home.css";
+import { Button, MenuItem, TextField } from '@mui/material';
+import Categories from '../../Data/categories';
+import { useNavigate } from 'react-router-dom';
+
+export default function Home({ name, setName, fetchQuestions }) {
+  const [category, setCategory] = useState('');
+  const [difficulty, setDifficulty] = useState('');
+  const [error, setError] = useState(false);
+
+  const navigate = useNavigate();
+
+  function handleSubmit() {
+    if (!category || !difficulty || !name) {
+      setError(true);
+      return;
+    } else {
+      setError(false);
+      fetchQuestions(category, difficulty);
+      navigate('/quiz', { method: 'push' });
+    }
+  }
+
+  return (
+    <div className='content'>
+      <div className='banner'>
+        <p>Banner for quiz goes here</p>
+      </div>
+      <div className='settings'>
+        <span style={{ fontSize: 40 }}>Quiz Settings</span>
+      </div>
+      <div className='settings_selection'>
+        <TextField
+          id="outlined-basic"
+          label="Username"
+          variant="outlined"
+          style={{ marginBottom: 25 }}
+          required
+          onChange={(e) => setName(e.target.value)}
+          error={error && !name}
+          helperText={error && !name ? 'Username is required.' : ''}
+        />
+        <TextField
+          select
+          label='Choose Category'
+          variant='outlined'
+          style={{ marginBottom: 25 }}
+          required
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          error={error && !category}
+          helperText={error && !category ? 'Category is required.' : ''}
+        >
+          {Categories.map((cat) => (
+            <MenuItem key={cat.category} value={cat.value}>
+              {cat.category}
+            </MenuItem>
+          ))}
+        </TextField>
+        <TextField
+          select
+          label='Choose Difficulty'
+          style={{ marginBottom: 25 }}
+          required
+          onChange={(e) => setDifficulty(e.target.value)}
+          value={difficulty}
+          error={error && !difficulty}
+          helperText={error && !difficulty ? 'Difficulty is required.' : ''}
+        />
+        <Button
+          variant='contained'
+          size='large'
+          onClick={handleSubmit}
+        >
+          Start Quiz
+        </Button>
+      </div>
+      {error && <div style={{ color: 'red', marginTop: '10px' }}>Please fill all the required fields</div>}
+    </div>
+  );
+}
+
+ */
