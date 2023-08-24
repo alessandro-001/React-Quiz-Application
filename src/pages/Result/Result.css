@@ -1,0 +1,7 @@
+.result {
+    display: flex;
+    text-align: center;
+    height: 60vh;
+    flex-direction: column;
+    justify-content: center;
+  }

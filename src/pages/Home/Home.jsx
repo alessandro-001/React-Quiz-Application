@@ -66,7 +66,7 @@ export default function Home({ name, setName, fetchQuestions }) {
           required
           onChange={(e) => {
             setDifficulty(e.target.value);
-            setError(false); // Clear the error when a difficulty is chosen
+            setError(false);
           }}
           value={difficulty}
           error={error}

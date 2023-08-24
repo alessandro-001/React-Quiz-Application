@@ -15,9 +15,7 @@ export default function Quiz({ name, questions, score, setScore, setQuestions })
       questions[currentQuestions]?.correct_answer,
       ...questions[currentQuestions]?.incorrect_answers
     ]))
-
-    console.log(questions);
-  }, [questions]);
+  }, [questions, currentQuestions]);
 
     console.log(options);
 
