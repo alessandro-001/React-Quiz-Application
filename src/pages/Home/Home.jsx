@@ -24,9 +24,6 @@ export default function Home({ name, setName, fetchQuestions }) {
 
   return (
     <div className='content'>
-      <div className='banner'>
-        <p>Banner for quiz goes here</p>
-      </div>
       <div className='settings'>
         <span style={{ fontSize: 40 }}>Quiz Settings</span>
       </div>

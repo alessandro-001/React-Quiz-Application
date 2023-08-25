@@ -8,6 +8,8 @@ Welcome to the Quiz App, a web application built using React and Vite, designed 
 - Answer multiple-choice questions with instant feedback.
 - Track your score as you progress through the quiz.
 - Enjoy a responsive and visually appealing design.
+- Responsive design for errors
+- Light/Dark mode switch
 
 ## Installation
 

@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3vh;
 }
 
 .singleQuestion {
@@ -46,7 +47,6 @@ box-shadow: 0 0 2px black;
     justify-content: space-around;
     margin-top: 30px;
 }
-
 
 .select {
     background-color: rgb(7, 207, 0);
