@@ -5,7 +5,7 @@ export default function ErrorMessage({ children }) {
     <div
       style={{
         display: "flex",
-        flexDirection: "column", // Create a column layout
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         width: "80%",

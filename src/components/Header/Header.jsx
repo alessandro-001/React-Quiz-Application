@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <div className='header'>
         <Link to='/' className='title'>
-            QUIZ APP
+            QUIZTOPIA
         </Link>
         <hr className='divider' />
     </div>

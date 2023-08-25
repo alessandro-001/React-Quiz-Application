@@ -1,4 +1,4 @@
-# Quiz App
+# Quiztopia
 
 Welcome to the Quiz App, a web application built using React and Vite, designed to offer interactive quizzes on various topics. The app features a user-friendly interface powered by Material UI for styling and CSS3 for additional design elements. Axios is used to make API calls to fetch quiz questions and data.
 
