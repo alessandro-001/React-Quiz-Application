@@ -1,9 +1,7 @@
 # Quiztopia
-
-Welcome to the Quiz App, a web application built using React and Vite, designed to offer interactive quizzes on various topics. The app features a user-friendly interface powered by Material UI for styling and CSS3 for additional design elements. Axios is used to make API calls to fetch quiz questions and data.
+Welcome to Quiztopia! This is a personal web app project built using React and Vite, designed to offer interactive quizzes on more than twenty various topics over three levels of diffiulty. The app features a user-friendly interface powered by Material UI for styling and CSS3 for additional design elements. Axios is used to make API calls to fetch quiz questions and data.
 
 ## Features
-
 - Choose quiz categories and difficulty levels.
 - Answer multiple-choice questions with instant feedback.
 - Track your score as you progress through the quiz.
@@ -12,7 +10,6 @@ Welcome to the Quiz App, a web application built using React and Vite, designed 
 - Light/Dark mode switch
 
 ## Installation
-
 1. Clone the repository:
 ```bash
 git clone https://github.com/alessandro-001/React-Quiz-Application.git
@@ -33,8 +30,8 @@ npm install
 npm run dev
 ```
 
-## Technologies Used
 
+## Technologies Used
 - **React**: A JavaScript library for building user interfaces.
 - **Vite**: A fast build tool that optimizes your frontend development workflow.
 - **Material UI**: A popular React UI framework that provides pre-styled components and styles.
@@ -42,7 +39,6 @@ npm run dev
 - **CSS3**: Used for additional styling and design enhancements.
 
 ## Usage
-
 1. Launch the app and select a quiz category and difficulty level.
 2. Click the "Start Quiz" button to begin the quiz.
 3. Answer the multiple-choice questions by clicking on the provided options.
@@ -55,7 +51,6 @@ npm run dev
   <img src="src/assets/Screenshot%202.png" width="200" alt="Screenshot 2">
   <img src="src/assets/Screenshot%203.png" width="200" alt="Screenshot 3">
 </div>
-
 
 ## Acknowledgements
 
