@@ -17,6 +17,84 @@ a {
   border: 10px solid;
 }
 
+/* footer CSS */
+.footer {
+  background-color: var(--background-color); /* Use the background color of your app */
+  padding: 20px 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo,
+.react,
+.material-ui-logo {
+  width: 80px;
+  height: auto;
+  margin: 0 15px;
+  background-color: transparent;
+  border: none;
+  filter: drop-shadow(0 0 2em #12ebefaa);
+  animation: logo-spin 20s linear infinite;
+}
+
+.axios-logo {
+  width: 80px;
+  height: auto;
+  margin: 0 15px;
+  padding-left: 30px;
+  background-color: transparent;
+  border: none;
+  filter: drop-shadow(0 0 1em #c265f8);
+  animation: logo-spin 20s linear infinite;
+}
+
+.css-logo {
+  width: 80px;
+  height: auto;
+  margin: 0 15px;
+  padding-left: 30px;
+  background-color: transparent;
+  border: none;
+  filter: drop-shadow(0 0 1em #86ceecaa);
+  animation: logo-spin 20s linear infinite;
+}
+
+.tech-title {
+  margin-top: 0px;
+  margin-bottom: -2px;
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.credit-link {
+  text-decoration: none;
+  color: white; 
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-right: 20px; 
+}
+
+.credit-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  filter: drop-shadow(0 0 1em #ffffff);
+}
+
+
+
+
+
 
 
 /* pre installed css */
