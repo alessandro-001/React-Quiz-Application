@@ -50,17 +50,22 @@ npm run dev
 5. View your score at the end of the quiz.
 
 ## Screenshots
+<div style="justify-content: center;">
+  <img src="src/assets/Screenshot%201.png" width="200" alt="Screenshot 1">
+  <img src="src/assets/Screenshot%202.png" width="200" alt="Screenshot 2">
+  <img src="src/assets/Screenshot%203.png" width="200" alt="Screenshot 3">
+</div>
 
-- Screenshot 1
-  ![Screenshot 1](screenshots/screenshot1.png)
-- Screenshot 2
-  ![Screenshot 2](screenshots/screenshot2.png)
 
 ## Acknowledgements
 
 - The quiz questions and data are sourced from API https://opentdb.com/api_config.php.
 - The icons used in the footer are from https://devicon.dev/ 
+- The Tab icon is from <a href="https://www.flaticon.com/free-icons/quiz" title="quiz icons">Quiz icons created by Freepik - Flaticon</a>
 - This app was inspired by the desire to improve my front end skills and to create an engaging and educational platform for users to test their knowledge.
+
+#
+# Please visit my web portfolio, Linkedin or GitHub profile by clicking on my name at bottom page or directly here: https://alessandrofrondini.netlify.app/  and don't be shy to send me suggestions, always looking forward to improve myself!
 
 ## Contributing
 
