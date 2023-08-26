@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+html {
+  font-size: 50%; /* Adjust this value as needed */
+}
+
 
 a {
   text-decoration: inherit;
@@ -31,37 +35,34 @@ a {
 }
 
 .logo,
-.react,
 .material-ui-logo {
-  width: 80px;
+  width: 40px;
   height: auto;
   margin: 0 15px;
   background-color: transparent;
   border: none;
   filter: drop-shadow(0 0 2em #12ebefaa);
-  animation: logo-spin 20s linear infinite;
 }
 
 .axios-logo {
-  width: 80px;
+  width: 30px;
   height: auto;
   margin: 0 15px;
   padding-left: 30px;
   background-color: transparent;
   border: none;
   filter: drop-shadow(0 0 1em #c265f8);
-  animation: logo-spin 20s linear infinite;
+  
 }
 
 .css-logo {
-  width: 80px;
+  width: 40px;
   height: auto;
   margin: 0 15px;
   padding-left: 30px;
   background-color: transparent;
   border: none;
   filter: drop-shadow(0 0 1em #86ceecaa);
-  animation: logo-spin 20s linear infinite;
 }
 
 .tech-title {

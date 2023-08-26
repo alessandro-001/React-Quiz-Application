@@ -5,6 +5,10 @@
     margin-top: 8vh;
 }
 
+.quiz-set {
+    font-size:x-large;
+}
+
 .settings {
 width: 45%;
 padding: 10px;
@@ -21,6 +25,8 @@ text-align: center;
 display: flex;
 flex-direction: column;
 padding: 20px;
+margin-bottom: 10px;
+margin-top: 20px;
 width: 50%;
 flex: 0.8;
 justify-content: space-evenly;

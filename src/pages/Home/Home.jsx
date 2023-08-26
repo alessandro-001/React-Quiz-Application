@@ -25,7 +25,7 @@ export default function Home({ name, setName, fetchQuestions }) {
   return (
     <div className='content'>
       <div className='settings'>
-        <span style={{ fontSize: 40 }}>Quiz Settings</span>
+        <span className='quiz-set'>Quiz Settings</span>
       </div>
       <div className='settings_selection'>
         <TextField

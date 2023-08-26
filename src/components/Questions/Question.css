@@ -61,5 +61,9 @@ box-shadow: 0 0 2px black;
 }
 
 .questionText {
-    font-size: xx-large;
+    font-size: x-large;
 }
+
+.singleQuestion {
+    font-size: 14px; /* Adjust the font size as needed */
+  }
