@@ -39,7 +39,6 @@ a {
   background-color: transparent;
   border: none;
   filter: drop-shadow(0 0 2em #12ebefaa);
-  animation: logo-spin 20s linear infinite;
 }
 
 .axios-logo {
@@ -50,7 +49,6 @@ a {
   background-color: transparent;
   border: none;
   filter: drop-shadow(0 0 1em #c265f8);
-  animation: logo-spin 20s linear infinite;
 }
 
 .css-logo {
@@ -61,7 +59,6 @@ a {
   background-color: transparent;
   border: none;
   filter: drop-shadow(0 0 1em #86ceecaa);
-  animation: logo-spin 20s linear infinite;
 }
 
 .tech-title {
