@@ -74,9 +74,9 @@ function App() {
             />
             <Route path="/result" element={<Result score={score} name={name} />} />
           </Routes>
+      <Footer />
         </div>
       </BrowserRouter>
-      <Footer />
     </>
   );
 }
