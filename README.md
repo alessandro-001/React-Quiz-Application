@@ -15,7 +15,7 @@ Welcome to Quiztopia! This is a personal web app project built using React and V
 git clone https://github.com/alessandro-001/React-Quiz-Application.git
 ```
 
-2. cd quiz-app | Navigate to the project directory:
+2. Navigate to the project directory:
 ```bash
 cd quiz-app
 ```

@@ -31,7 +31,7 @@ export default function Result({ name, score }) {
         color="primary"
         size="large"
         style={{ alignSelf: "center", marginTop: 20 }}
-        href="/"
+        href="/leaderboard"
       >Leaderboard</Button>
     </div>
   )
