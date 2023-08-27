@@ -45,6 +45,8 @@ npm run dev
 4. Receive immediate feedback on your answers.
 5. View your score at the end of the quiz.
 
+Play the hosted version here: https://quiztopia-webapp.netlify.app/
+
 ## Screenshots
 <div style="justify-content: center;">
   <img src="src/assets/Screenshot%201.png" width="200" alt="Screenshot 1">

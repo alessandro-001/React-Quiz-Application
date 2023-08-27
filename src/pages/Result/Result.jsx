@@ -26,6 +26,13 @@ export default function Result({ name, score }) {
         style={{ alignSelf: "center", marginTop: 20 }}
         href="/"
       >Back to home</Button>
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        style={{ alignSelf: "center", marginTop: 20 }}
+        href="/"
+      >Leaderboard</Button>
     </div>
   )
 }

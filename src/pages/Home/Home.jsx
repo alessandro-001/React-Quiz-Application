@@ -80,6 +80,13 @@ export default function Home({ name, setName, fetchQuestions }) {
         >
           Start Quiz
         </Button>
+        <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        style={{ alignSelf: "center", marginTop: 20 }}
+        href="/leaderboard"
+      >Leaderboard</Button>
       </div>
       {error && <div style={{ color: 'red', marginTop: '10px' }}>Please fill all the required fields</div>}
     </div>

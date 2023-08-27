@@ -20,7 +20,7 @@ a {
 
 /* footer CSS */
 .footer {
-  background-color: var(--background-color); /* Use the background color of your app */
+  background-color: var(--background-color); 
   padding: 20px 0;
 }
 
