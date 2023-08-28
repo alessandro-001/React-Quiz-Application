@@ -4,6 +4,9 @@ import { Button, MenuItem, TextField } from '@mui/material';
 import Categories from '../../Data/categories';
 import { useNavigate } from 'react-router-dom';
 
+import { addDoc, collection } from 'firebase/firestore';
+
+
 export default function Home({ name, setName, fetchQuestions }) {
   const [category, setCategory] = useState('');
   const [difficulty, setDifficulty] = useState('');
@@ -21,6 +24,7 @@ export default function Home({ name, setName, fetchQuestions }) {
       navigate('/quiz', { method: 'push' });
     }
   }
+
 
   return (
     <div className='content'>
