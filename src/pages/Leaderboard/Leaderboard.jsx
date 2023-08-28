@@ -13,30 +13,33 @@ export default function Leaderboard() {
       setLeaderboard(snapshot.docs.map((doc) => doc.data()))
       console.log(snapshot.docs);
     })
-  }, []) // Ensure useEffect runs only once on component mount
+  }, []) 
+
+  
 
   return (
     <div className="leaderboard-container">
-      <h1>Leaderboard:</h1>
-      <div className="scrollable-content">
-        {leaderboard && leaderboard.map((board, index) => (
-          <div key={index} className="entry">
-            <p>{board.username}</p>
-            <p>{board.category}</p>
-            <p>{board.score}</p>
-            <p>{board.difficulty}</p>
-          </div>
-        ))}
+  <h1>Leaderboard:</h1>
+  <div className="scrollable-content">
+    {leaderboard && leaderboard.map((board, index) => (
+      <div key={index} className="entry">
+        <p>{board.username}</p>
+        <p>{board.category}</p>
+        <p>{board.difficulty}</p>
+        <p>{board.score}</p>
       </div>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="large"
-        className="back-button"
-        href="/"
-      >
-        Back to home
-      </Button>
-    </div>
+    ))}
+  </div>
+  <Button
+    variant="contained"
+    color="secondary"
+    size="large"
+    className="ldr-back-button"
+    href="/"
+  >
+    Back to home
+  </Button>
+</div>
+
   );
 }

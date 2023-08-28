@@ -4,6 +4,7 @@ import { CircularProgress } from '@mui/material';
 import './Quiz.css';
 import Question from '../../components/Questions/Question';
 
+
 export default function Quiz({ name, questions, score, setScore, setQuestions }) {
   
   const [options, setOptions] = useState();
