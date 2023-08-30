@@ -14,7 +14,9 @@ export default function Leaderboard({username, category, difficulty, score}) {
     onSnapshot(collection(db, 'leaderboard'), (snapshot) => {
       const data = snapshot.docs.map((doc) => doc.data());
       data.sort((a, b) => b.score - a.score);
-      setLeaderboard(data);
+      
+      const topTen = data.slice(0, 10)
+      setLeaderboard(topTen);
     })
   }, [username]);
 
@@ -33,7 +35,7 @@ export default function Leaderboard({username, category, difficulty, score}) {
         {leaderboard && leaderboard.map((board, index) => (
           <div key={index} className="entry">
             <p>{board.username}</p>
-            <p>{board.category}</p>
+            {/* <p>{board.category}</p> */}
             <p>{board.difficulty}</p>
             <p>{board.score}</p>
           </div>
