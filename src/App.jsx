@@ -12,11 +12,15 @@ import Leaderboard from './pages/Leaderboard/Leaderboard';
 
 function App() {
   const [theme, setTheme] = useState(null);
-  const [name, setName] = useState('');
+  const [username, setUserName] = useState('');
   const [questions, setQuestions] = useState();
   const [score, setScore] = useState(0);
 
+  const [category, setCategory] = useState('');
+  const [difficulty, setDifficulty] = useState('');
+
   // const isDesktop = useMediaQuery('(min-width: 960px)');
+  console.log("name>>", username);
 
   const fetchQuestions = async (category = '', difficulty = '') => {
     const { data } = await axios.get(
@@ -68,9 +72,13 @@ function App() {
               path="/"
               element={
                 <Home
-                  name={name}
-                  setName={setName}
+                  username={username}
+                  setUserName={setUserName}
                   fetchQuestions={fetchQuestions}
+                  category={category}
+                  setCategory={setCategory}
+                  difficulty={difficulty}
+                  setDifficulty={setDifficulty}
                 />
               }
             />
@@ -78,7 +86,7 @@ function App() {
               path="/quiz"
               element={
                 <Quiz
-                  name={name}
+                  username={username}
                   questions={questions}
                   setScore={setScore}
                   score={score}
@@ -87,8 +95,26 @@ function App() {
                 />
               }
             />
-            <Route path="/result" element={<Result score={score} name={name} />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route 
+              path="/result" 
+              element={
+                <Result 
+                  score={score} 
+                  username={username} 
+                  category={category}
+                  difficulty={difficulty}
+                />} />
+            <Route 
+              path="/leaderboard" 
+              element={
+                <Leaderboard 
+                  username={username}  
+                  category={category}
+                  difficulty={difficulty}
+                  score={score}
+                />
+              } 
+            />
           </Routes>
         </div>
       </BrowserRouter>

@@ -7,15 +7,13 @@ import { useNavigate } from 'react-router-dom';
 import { addDoc, collection } from 'firebase/firestore';
 
 
-export default function Home({ name, setName, fetchQuestions }) {
-  const [category, setCategory] = useState('');
-  const [difficulty, setDifficulty] = useState('');
+export default function Home({ username, setUserName, fetchQuestions, category, setCategory, difficulty, setDifficulty }) {
   const [error, setError] = useState(false);
 
   const navigate = useNavigate();
 
   function handleSubmit() {
-    if (!category || !difficulty || !name) {
+    if (!category || !difficulty || !username) {
       setError(true);
       return;
     } else {
@@ -38,9 +36,9 @@ export default function Home({ name, setName, fetchQuestions }) {
           variant="outlined"
           style={{ marginBottom: 25 }}
           required
-          onChange={(e) => setName(e.target.value)}
-          error={error && !name}
-          helperText={error && !name ? 'Username is required.' : ''}
+          onChange={(e) => setUserName(e.target.value)}
+          error={error && !username}
+          helperText={error && !username ? 'Username is required.' : ''}
         />
         <TextField
           select
@@ -81,18 +79,16 @@ export default function Home({ name, setName, fetchQuestions }) {
           variant='contained'
           size='large'
           onClick={handleSubmit}
-        >
-          Start Quiz
-        </Button>
+        >Start Quiz</Button>
         <Button
-        variant="contained"
-        color="primary"
-        size="large"
-        style={{ alignSelf: "center", marginTop: 20 }}
-        href="/leaderboard"
-      >Leaderboard</Button>
+          variant="contained"
+          color="primary"
+          size="large"
+          style={{ alignSelf: "center", marginTop: 20 }}
+          href="/leaderboard"
+        >Leaderboard</Button>
       </div>
-      {error && <div style={{ color: 'red', marginTop: '10px' }}>Please fill all the required fields</div>}
+        {error && <div style={{ color: 'red', marginTop: '10px' }}>Please fill all the required fields</div>}
     </div>
   );
 }

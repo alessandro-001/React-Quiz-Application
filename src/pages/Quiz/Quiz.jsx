@@ -5,7 +5,7 @@ import './Quiz.css';
 import Question from '../../components/Questions/Question';
 
 
-export default function Quiz({ name, questions, score, setScore, setQuestions }) {
+export default function Quiz({ username, questions, score, setScore, setQuestions, category }) {
   
   const [options, setOptions] = useState();
   const [currentQuestions, setCurrentQuestions] = useState(0);
@@ -18,15 +18,15 @@ export default function Quiz({ name, questions, score, setScore, setQuestions })
     ]))
   }, [questions, currentQuestions]);
 
-    console.log(options);
+    //console.log(options);
 
   function handleMixQuest(option) {
     return option.sort(() => Math.random() - 0.5);
   }
-
+console.log(category);
   return (
     <div className='quiz'>
-      <h2 className="subtitle">Hello {name} !</h2>
+      <h2 className="subtitle">Hello {username} !</h2>
       {questions ? (
         <>
           <div className='quizCategory'>
