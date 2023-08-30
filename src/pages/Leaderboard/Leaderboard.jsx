@@ -12,11 +12,18 @@ export default function Leaderboard({username, category, difficulty, score}) {
 
   useEffect(() => {
     onSnapshot(collection(db, 'leaderboard'), (snapshot) => {
-      setLeaderboard(snapshot.docs.map((doc) => doc.data()))
-      //console.log(snapshot.docs);
+      const data = snapshot.docs.map((doc) => doc.data());
+      data.sort((a, b) => b.score - a.score);
+      setLeaderboard(data);
     })
   }, [username]);
 
+  console.log("above", leaderboard);
+
+  //setLeaderboard((leaderboard) => {})
+  console.log("below", leaderboard);
+  // let topFive = leaderboard.slice(0, 4);
+  // setLeaderboard(topFive);
   
 
   return (
