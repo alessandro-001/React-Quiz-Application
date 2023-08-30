@@ -1,14 +1,14 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@mui/material';
 import './Result.css'
 import { addDoc, collection } from 'firebase/firestore';
 import db from './../../../firebase';
 
 export default function Result({ username, score, difficulty, category }) {
-
   const navigate = useNavigate();
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   useEffect(() => {
     if (!username) {
@@ -17,11 +17,14 @@ export default function Result({ username, score, difficulty, category }) {
   }, [username, history])
   
   const handleNew = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    setIsButtonDisabled(true); 
+
     const collectionRef = collection(db, 'leaderboard');
-    const payload = {username: username, category: category, difficulty: difficulty, score: score}
+    const payload = { username: username, category: category, difficulty: difficulty, score: score };
+
     await addDoc(collectionRef, payload);
-  }
+  };
   
   console.log(username, score, difficulty, category);
 
@@ -47,7 +50,9 @@ export default function Result({ username, score, difficulty, category }) {
         color="primary"
         size="large"
         style={{ alignSelf: "center", marginTop: 20 }}
-        onClick={handleNew}>Submit Score</Button>
+        onClick={handleNew}
+        disabled={isButtonDisabled} 
+        >Submit Score</Button>
       <p>See how you did! Submit your score and check the Leaderboard!</p>
     </div>
   )
