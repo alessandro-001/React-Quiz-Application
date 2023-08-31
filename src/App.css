@@ -1,3 +1,4 @@
+/* stop */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -101,12 +102,33 @@ a {
   background-image: url('../src/assets/brickwallBG.png');
 */
 
-body {
+/* body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin: 0; 
   padding: 0; 
+} */
+
+@media (max-width: 768px) {
+  body {
+    background-size: contain; 
+  }
 }
+
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  body {
+    background-size: cover;
+  }
+}
+
+
+@media (min-width: 1201px) {
+  body {
+    background-size: cover;
+  }
+}
+
 
 
 .logo {
