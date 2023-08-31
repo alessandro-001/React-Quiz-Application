@@ -6,9 +6,9 @@ import './Header.css'
 export default function Header() {
   return (
     <div className='header' >
-        <Link to='/' className='title' >
+        <div className='title' >
             QUIZTOPIA
-        </Link>
+        </div>
         <hr className='divider' />
     </div>
   )

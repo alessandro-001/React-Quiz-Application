@@ -52,7 +52,7 @@ export default function Home({ username, setUserName, fetchQuestions, category, 
           id="outlined-basic"
           label="Username"
           variant="outlined"
-          style={{ marginBottom: 25 }}
+          style={{ marginBottom: 25, backgroundColor:'white', borderRadius: 5 }}
           required
           onChange={handleUsernameChange}
           error={error && (!username || username.trim().length < 3)}
@@ -62,7 +62,7 @@ export default function Home({ username, setUserName, fetchQuestions, category, 
           select
           label='Choose Category'
           variant='outlined'
-          style={{ marginBottom: 25 }}
+          style={{ marginBottom: 25, backgroundColor:'white', borderRadius: 5 }}
           required
           onChange={handleCategoryChange}
           value={category}
@@ -79,7 +79,7 @@ export default function Home({ username, setUserName, fetchQuestions, category, 
           select
           label='Choose Difficulty'
           variant='outlined'
-          style={{ marginBottom: 25 }}
+          style={{ marginBottom: 25, backgroundColor:'white', borderRadius: 5 }}
           required
           onChange={handleDifficultyChange}
           value={difficulty}
