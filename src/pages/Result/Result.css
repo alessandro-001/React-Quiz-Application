@@ -1,8 +1,13 @@
 .result {
     display: flex;
     text-align: center;
-    height: 60vh;
+    height: 80vh;
     flex-direction: column;
     justify-content: center;
     font-size: medium;
+    align-items: center;
   }
+
+.title {
+  text-align: center;
+}
