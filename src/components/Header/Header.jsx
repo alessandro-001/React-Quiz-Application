@@ -5,8 +5,8 @@ import './Header.css'
 
 export default function Header() {
   return (
-    <div className='header'>
-        <Link to='/' className='title'>
+    <div className='header' >
+        <Link to='/' className='title' >
             QUIZTOPIA
         </Link>
         <hr className='divider' />
