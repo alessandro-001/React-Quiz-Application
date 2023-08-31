@@ -4,8 +4,6 @@ import { Button, MenuItem, TextField } from '@mui/material';
 import Categories from '../../Data/categories';
 import { useNavigate } from 'react-router-dom';
 
-import { addDoc, collection } from 'firebase/firestore';
-
 
 export default function Home({ username, setUserName, fetchQuestions, category, setCategory, difficulty, setDifficulty }) {
   const [error, setError] = useState(false);
@@ -13,7 +11,7 @@ export default function Home({ username, setUserName, fetchQuestions, category, 
   const navigate = useNavigate();
 
   function handleSubmit() {
-    if (!category || !difficulty || !username) {
+    if (!category || !difficulty || !username || username.trim().length < 3) {
       setError(true);
       return;
     } else {
@@ -23,6 +21,26 @@ export default function Home({ username, setUserName, fetchQuestions, category, 
     }
   }
 
+  function handleUsernameChange(e) {
+    setUserName(e.target.value);
+    if (error && e.target.value.trim().length >= 3) {
+      setError(false);
+    }
+  }
+
+  function handleCategoryChange(e) {
+    setCategory(e.target.value);
+    if (error && e.target.value) {
+      setError(false);
+    }
+  }
+
+  function handleDifficultyChange(e) {
+    setDifficulty(e.target.value);
+    if (error && e.target.value) {
+      setError(false);
+    }
+  }
 
   return (
     <div className='content'>
@@ -36,9 +54,9 @@ export default function Home({ username, setUserName, fetchQuestions, category, 
           variant="outlined"
           style={{ marginBottom: 25 }}
           required
-          onChange={(e) => setUserName(e.target.value)}
-          error={error && !username}
-          helperText={error && !username ? 'Username is required.' : ''}
+          onChange={handleUsernameChange}
+          error={error && (!username || username.trim().length < 3)}
+          helperText={error && (!username || username.trim().length < 3) ? 'Username is required and must have at least three letters.' : ''}
         />
         <TextField
           select
@@ -46,7 +64,7 @@ export default function Home({ username, setUserName, fetchQuestions, category, 
           variant='outlined'
           style={{ marginBottom: 25 }}
           required
-          onChange={(e) => setCategory(e.target.value)}
+          onChange={handleCategoryChange}
           value={category}
           error={error && !category}
           helperText={error && !category ? 'Category is required.' : ''}
@@ -63,10 +81,7 @@ export default function Home({ username, setUserName, fetchQuestions, category, 
           variant='outlined'
           style={{ marginBottom: 25 }}
           required
-          onChange={(e) => {
-            setDifficulty(e.target.value);
-            setError(false);
-          }}
+          onChange={handleDifficultyChange}
           value={difficulty}
           error={error}
           helperText={error ? 'Difficulty is required.' : ''}
