@@ -1,5 +1,5 @@
 # Quiztopia
-Welcome to Quiztopia! This is a personal web app project built using React and Vite, designed to offer interactive quizzes on more than twenty various topics over three levels of diffiulty. The app features a user-friendly interface powered by Material UI for styling and CSS3 for additional design elements. Axios is used to make API calls to fetch quiz questions and data.
+Welcome to Quiztopia! This is a personal web app project built using React and Vite, designed to offer interactive quizzes on more than twenty various topics over three levels of diffiulty. The app features a user-friendly interface powered by Material UI for styling and CSS3 for additional design elements. Axios is used to make API calls to fetch quiz questions and data and Google Firebase to store the quiz results to display in the leaderboard!
 
 ## Features
 - Choose quiz categories and difficulty levels.
@@ -37,6 +37,7 @@ npm run dev
 - **Material UI**: A popular React UI framework that provides pre-styled components and styles.
 - **Axios**: A promise-based HTTP client for making API calls.
 - **CSS3**: Used for additional styling and design enhancements.
+- **Firebase**: As backend to store your result to display on the leaderboard.
 
 ## Usage
 1. Launch the app and select a quiz category and difficulty level.

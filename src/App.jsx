@@ -8,7 +8,6 @@ import Quiz from './pages/Quiz/Quiz';
 import Result from './pages/Result/Result';
 import axios from 'axios';
 import Leaderboard from './pages/Leaderboard/Leaderboard';
-//import useMediaQuery from './components/Mediaquery';
 
 function App() {
   const [theme, setTheme] = useState(null);
@@ -19,7 +18,6 @@ function App() {
   const [category, setCategory] = useState('');
   const [difficulty, setDifficulty] = useState('');
 
-  // const isDesktop = useMediaQuery('(min-width: 960px)');
   console.log("name>>", username);
 
   const fetchQuestions = async (category = '', difficulty = '') => {
@@ -48,16 +46,7 @@ function App() {
     localStorage.setItem('theme', newTheme);
   }
 
-  // function sreenSize(isDesktop) {
-  //   if (!isDesktop) { // If media query matches
-  //     document.body.style.backgroundColor = "yellow";
-  //   } else {
-  //     document.body.style.backgroundColor = "pink";
-  //   }
-  // }
-  
-  
-
+ 
   return (
     <>
       <button type="button" onClick={handleThemeSwitch}>
@@ -65,7 +54,6 @@ function App() {
       </button>
       <BrowserRouter>
         <div className={`app ${theme}`}>
-        {/* {isDesktop ? <h1>Desktop</h1> : <h1>Mobile</h1>} */}
           <Header />
           <Routes>
             <Route

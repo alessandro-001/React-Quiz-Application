@@ -23,6 +23,13 @@ export default function Footer() {
         </a>
         <a href="https://mui.com/">
         <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+          className="material-ui-logo"
+          alt="Material UI logo"
+        />
+        </a>
+        <a href="https://mui.com/">
+        <img
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
           className="material-ui-logo"
           alt="Material UI logo"
