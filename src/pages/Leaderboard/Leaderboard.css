@@ -1,11 +1,37 @@
-/* Leaderboard.css */
 .entry {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    border-bottom: 1px solid #ddd; 
-}
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Equal width for columns */
+    align-items: center;
+    justify-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+  }
+
+
   
 
+  /* Add or adjust these styles for the header row */
+  .header-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Equal width for columns */
+    align-items: center;
+    justify-items: center;
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: #f0f0f0;
+  }
+  
+  .column {
+    text-align: center;
+  }
+  
+  /* Other existing styles for .entry, .username, .difficulty, .score */
   

@@ -30,26 +30,32 @@ export default function Leaderboard({username, category, difficulty, score}) {
 
   return (
     <div className="leaderboard-container">
-      <h1>Leaderboard:</h1>
-      <div className="scrollable-content">
-        {leaderboard && leaderboard.map((board, index) => (
-          <div key={index} className="entry">
-            <p>{board.username}</p>
-            {/* <p>{board.category}</p> */}
-            <p>{board.difficulty}</p>
-            <p>{board.score}</p>
-          </div>
-        ))}
+  <h1>Leaderboard:</h1>
+  <div className="header-row">
+    <div className="column">Username</div>
+    <div className="column">Difficulty</div>
+    <div className="column">Score</div>
+  </div>
+  <div className="scrollable-content">
+    {leaderboard && leaderboard.map((board, index) => (
+      <div key={index} className="rows">
+        <div className="column">{board.username}</div>
+        <div className="column">{board.difficulty}</div>
+        <div className="column">{board.score}</div>
       </div>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="large"
-        className="ldr-back-button"
-        href="/"
-      >
-        Back to home
-      </Button>
-    </div>
+    ))}
+  </div>
+  <Button
+    variant="contained"
+    color="secondary"
+    size="large"
+    className="ldr-back-button"
+    href="/"
+  >
+    Back to home
+  </Button>
+</div>
+
   );
 }
+
