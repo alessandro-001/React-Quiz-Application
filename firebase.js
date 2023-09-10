@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCXy_ciFe0b2J94y-3WoA9h3284eoof-ks",
+  apiKey: `${import.meta.env.VITE_API_KEY}`,
   authDomain: "quiztopia-36baa.firebaseapp.com",
   projectId: "quiztopia-36baa",
   storageBucket: "quiztopia-36baa.appspot.com",
