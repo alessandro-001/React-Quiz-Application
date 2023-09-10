@@ -20,42 +20,35 @@ export default function Leaderboard({username, category, difficulty, score}) {
     })
   }, [username]);
 
-  console.log("above", leaderboard);
-
-  //setLeaderboard((leaderboard) => {})
-  console.log("below", leaderboard);
-  // let topFive = leaderboard.slice(0, 4);
-  // setLeaderboard(topFive);
   
 
   return (
     <div className="leaderboard-container">
-  <h1>Leaderboard:</h1>
-  <div className="header-row">
-    <div className="column">Username</div>
-    <div className="column">Difficulty</div>
-    <div className="column">Score</div>
-  </div>
-  <div className="scrollable-content">
-    {leaderboard && leaderboard.map((board, index) => (
-      <div key={index} className="rows">
-        <div className="column">{board.username}</div>
-        <div className="column">{board.difficulty}</div>
-        <div className="column">{board.score}</div>
+      <h1>Leaderboard:</h1>
+      <div className="header-row">
+        <div className="column">Username</div>
+        <div className="column">Difficulty</div>
+        <div className="column">Score</div>
       </div>
-    ))}
-  </div>
-  <Button
-    variant="contained"
-    color="secondary"
-    size="large"
-    className="ldr-back-button"
-    href="/"
-  >
-    Back to home
-  </Button>
-</div>
-
+      <div className="scrollable-content">
+        {leaderboard && leaderboard.map((board, index) => (
+          <div key={index} className="rows">
+            <div className="column">{board.username}</div>
+            <div className="column">{board.difficulty}</div>
+            <div className="column">{board.score}</div>
+          </div>
+        ))}
+      </div>
+      <Button
+        variant="contained"
+        color="secondary"
+        size="large"
+        className="ldr-back-button"
+        href="/"
+      >
+      Back to home
+      </Button>
+    </div>
   );
 }
 
